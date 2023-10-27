@@ -1,5 +1,4 @@
 import {
-    SpriteGsap,
     SpriteInertia,
     SpriteLaravel,
     SpriteMysql,
@@ -21,7 +20,6 @@ export const STACKS = {
     laravel: 'LARAVEL',
     inertia: 'INERTIA',
     mysql: 'MYSQL',
-    gsap: 'GSAP',
 } as const
 
 export const StackSprite = ({
@@ -46,8 +44,6 @@ export const StackSprite = ({
             return <SpriteLaravel />
         case STACKS.mysql:
             return <SpriteMysql />
-        case STACKS.gsap:
-            return <SpriteGsap />
         default:
             return <SpriteInertia />
     }

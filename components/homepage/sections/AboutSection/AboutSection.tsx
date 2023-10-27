@@ -13,11 +13,11 @@ export const AboutSection = () => {
                 {/* header */}
                 <div className="flex items-end justify-between">
                     <div>
-                        <div className="w-28 h-28 overflow-hidden rounded-full border-2 border-foreground">
+                        <div className="w-28 h-28 overflow-hidden rounded-full">
                             <Image
                                 src={me}
                                 alt="Me"
-                                className="w-full h-full object-center object-cover"
+                                className="w-full h-full object-center object-cover grayscale"
                             />
                         </div>
                     </div>
@@ -51,7 +51,7 @@ export const AboutSection = () => {
                             <a
                                 href="https://www.upwork.com/freelancers/~016e4171185bc6ec63"
                                 target="_blank"
-                                className="text-green-600 dark:text-foreground link"
+                                className="link text-accent"
                             >
                                 Upwork
                             </a>{' '}
@@ -59,7 +59,7 @@ export const AboutSection = () => {
                             <a
                                 href="https://www.fiverr.com/itsrasul"
                                 target="_blank"
-                                className="text-green-600 dark:text-foreground link"
+                                className="link text-accent"
                             >
                                 Fiverr
                             </a>

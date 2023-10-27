@@ -1,4 +1,3 @@
-import SpriteGsap from './SpriteGsap'
 import SpriteInertia from './SpriteInertia'
 import SpriteLaravel from './SpriteLaravel'
 import SpriteMysql from './SpriteMysql'
@@ -10,7 +9,6 @@ import SpriteTailwind from './SpriteTailwind'
 import SpriteTypescript from './SpriteTypescript'
 
 export {
-    SpriteGsap,
     SpriteInertia,
     SpriteLaravel,
     SpriteMysql,
