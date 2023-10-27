@@ -1,0 +1,7 @@
+.marquee {
+    transform: translate3d(0, 101%, 0);
+}
+
+.marquee__inner--wrap {
+    transform: translate3d(0, -101%, 0);
+}
