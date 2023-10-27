@@ -66,6 +66,7 @@ export const ProjectsSection = () => {
                             STACKS.typescript,
                             STACKS.tailwind,
                             STACKS.next,
+                            STACKS.gsap,
                         ]}
                     />
                 </div>

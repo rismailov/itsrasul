@@ -17,7 +17,7 @@ export const AboutSection = () => {
                             <Image
                                 src={me}
                                 alt="Me"
-                                className="w-full h-full object-center object-cover grayscale"
+                                className="w-full h-full object-center object-cover"
                             />
                         </div>
                     </div>
@@ -51,7 +51,7 @@ export const AboutSection = () => {
                             <a
                                 href="https://www.upwork.com/freelancers/~016e4171185bc6ec63"
                                 target="_blank"
-                                className="link text-accent"
+                                className="text-green-600 dark:text-foreground link"
                             >
                                 Upwork
                             </a>{' '}
@@ -59,7 +59,7 @@ export const AboutSection = () => {
                             <a
                                 href="https://www.fiverr.com/itsrasul"
                                 target="_blank"
-                                className="link text-accent"
+                                className="text-green-600 dark:text-foreground link"
                             >
                                 Fiverr
                             </a>
