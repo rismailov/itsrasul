@@ -1,21 +1,9 @@
+// additional provider for lenis so it can be used in react server component: layout.tsx
 'use client'
 
 import { ReactLenis } from '@studio-freight/react-lenis'
-import { PropsWithChildren, useEffect, useRef } from 'react'
+import { PropsWithChildren } from 'react'
 
 export function LenisProvider({ children }: PropsWithChildren) {
-    const lenisRef = useRef()
-
-    useEffect(() => {
-        // console.log(lenisRef.current?.raf)
-        // function update(time) {
-        //     lenisRef.current?.raf(time * 1000)
-        // }
-        // gsap.ticker.add(update)
-        // return () => {
-        //     gsap.ticker.remove(update)
-        // }
-    })
-
-    return <ReactLenis ref={lenisRef}>{children}</ReactLenis>
+    return <ReactLenis root>{children}</ReactLenis>
 }

@@ -7,12 +7,9 @@ import SplitType from 'split-type'
 export const AnimatedTextOnSroll = ({
     className,
     text,
-    isFooter,
 }: {
     className: string
     text: string
-    // text on footer will have a different animation trigger.
-    isFooter?: boolean
 }) => {
     const ref = useRef<HTMLHeadingElement | null>(null)
     const ctx = useGsapContext(ref)
@@ -35,10 +32,6 @@ export const AnimatedTextOnSroll = ({
                     gsap.set(char.parentNode, { perspective: 2000 }),
                 )
 
-                // set trigger as end of "about" section if the text will appear on footer.
-                // @see (isFooter prop)
-                const about = document.querySelector('#about')
-
                 gsap.fromTo(
                     chars,
                     {
@@ -57,15 +50,9 @@ export const AnimatedTextOnSroll = ({
                             from: 0,
                         },
                         scrollTrigger: {
-                            trigger: isFooter && !!about ? about : word,
-                            start:
-                                isFooter && !!about
-                                    ? 'bottom-=10%'
-                                    : 'center bottom+=20%',
-                            end:
-                                isFooter && !!about
-                                    ? undefined
-                                    : 'bottom center-=30%',
+                            trigger: word,
+                            start: 'center bottom+=20%',
+                            end: 'bottom center-=30%',
                             scrub: 0.9,
                         },
                     },

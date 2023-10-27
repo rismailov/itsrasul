@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
+import { LenisProvider } from '@/context/lenis-provider'
 
 // fonts
 const satoshi = localFont({
@@ -42,11 +43,13 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <Header />
+                    <LenisProvider>
+                        <Header />
 
-                    {children}
+                        {children}
 
-                    <Footer />
+                        <Footer />
+                    </LenisProvider>
                 </ThemeProvider>
             </body>
         </html>

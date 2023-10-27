@@ -1,13 +1,8 @@
-import React from 'react'
-
-const classname =
-    'w-full h-full absolute top-0 bottom-0 left-[50vw] stroke-muted-foreground opacity-10'
-
 export const AbstractCircles = () => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            className={classname}
+            className="w-full h-full absolute top-0 bottom-0 left-[50vw] stroke-muted-foreground opacity-10"
             viewBox="0 0 6676 5569"
             fill="none"
         >

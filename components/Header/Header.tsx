@@ -12,7 +12,7 @@ const MenuLink = ({ label }: { label: string }) => {
 
 export const Header = () => {
     return (
-        <header className="h-[80px] bg-background dark:bg-secondary relative z-10">
+        <header className="h-[80px] bg-background dark:bg-secondary">
             <div className="container py-5">
                 <div className="flex items-center justify-between">
                     {/* left side */}

@@ -4,7 +4,10 @@ import { AbstractCircles } from './AbstractCircles'
 
 export const HeroSection = () => {
     return (
-        <section className="w-full relative overflow-hidden h-[calc(100vh-60px)] bg-black">
+        <section
+            id="hero"
+            className="w-full relative overflow-hidden h-[calc(100vh-60px)] bg-black"
+        >
             <AbstractCircles />
 
             <div className="h-[calc(100vh-80px)] rounded-bl-3xl rounded-br-3xl bg-background dark:bg-secondary">

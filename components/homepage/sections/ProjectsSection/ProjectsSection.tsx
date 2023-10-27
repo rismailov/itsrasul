@@ -4,7 +4,7 @@ import { STACKS } from './sprites/StackSprite'
 
 export const ProjectsSection = () => {
     return (
-        <section className="dark pt-20 pb-24 bg-black">
+        <section id="projects" className="dark pt-20 pb-24 bg-black">
             <div className="container">
                 {/* pre-title */}
                 <p className="text-muted-foreground text-lg leading-none">

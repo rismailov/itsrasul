@@ -30,8 +30,10 @@ body {
         --muted: 240 4.8% 95.9%;
         --muted-foreground: 182 28% 21% / 0.6;
 
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
+        /*indigo*/
+        --accent: 230 75% 59%;
+        --accent-hover: 230 58% 51%;
+        --accent-foreground: 230 58% 51%;
 
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
@@ -62,8 +64,10 @@ body {
         --muted: 240 3.7% 15.9%;
         --muted-foreground: 54 24% 92% / 0.5;
 
-        --accent: 240 3.7% 15.9%;
-        --accent-foreground: 0 0% 98%;
+        /* indigo */
+        --accent: 230 94% 82%;
+        --accent-hover: 229 89% 74%;
+        --accent-foreground: 230 94% 82%;
 
         --destructive: 0 62.8% 30.6%;
         --destructive-foreground: 0 0% 98%;
