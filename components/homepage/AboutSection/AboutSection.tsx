@@ -1,7 +1,7 @@
 import { MarqueeTextSection } from '@/components/MarqueeTextSection'
+import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { InfoSubSection } from './InfoSubSection'
-import { Button } from '@/components/ui/button'
 
 export const AboutSection = () => {
     return (

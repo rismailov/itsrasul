@@ -48,10 +48,7 @@ export const ContactSection = () => {
                                 </span>
 
                                 <Button variant="link" asChild>
-                                    <a
-                                        href="mailto:hello@itsrasul.dev"
-                                        // className="text-foreground dark:text-accent-foreground underline hover:no-underline"
-                                    >
+                                    <a href="mailto:hello@itsrasul.dev">
                                         hello@itsrasul.dev
                                     </a>
                                 </Button>

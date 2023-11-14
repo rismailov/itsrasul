@@ -89,9 +89,9 @@ export const Project = ({
                             0,
                         )
                 }
-            })
+            }, [rootRef])
 
-            return () => ctx.revert()
+            return () => ctx && ctx.revert()
         }
     }, [])
 
