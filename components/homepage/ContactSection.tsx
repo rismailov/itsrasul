@@ -43,11 +43,15 @@ export const ContactSection = () => {
                             </div>
 
                             <div className="font-paragraph ">
-                                <span className="text-muted-foreground text-sm">
+                                <span className="text-muted-foreground">
                                     Would rather send an e-mail?{' '}
                                 </span>
 
-                                <Button variant="link" asChild>
+                                <Button
+                                    variant="link"
+                                    asChild
+                                    className="text-base"
+                                >
                                     <a href="mailto:hello@itsrasul.dev">
                                         hello@itsrasul.dev
                                     </a>

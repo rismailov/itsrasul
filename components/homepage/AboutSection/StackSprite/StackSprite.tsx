@@ -9,7 +9,7 @@ import {
     SpriteReact,
     SpriteTailwind,
     SpriteTypescript,
-} from '.'
+} from './sprites'
 
 export const STACKS = {
     php: 'PHP',

@@ -11,7 +11,7 @@ export const InfoSubSection = ({
                 {title}
             </div>
 
-            <p className="font-paragraph">{children}</p>
+            <div className="font-paragraph">{children}</div>
         </div>
     )
 }
