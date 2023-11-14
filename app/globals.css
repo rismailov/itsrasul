@@ -3,75 +3,57 @@
 @tailwind utilities;
 
 html {
-    font-size: 17px;
+    font-size: 20px;
 }
 
 body {
     overflow-x: hidden;
+    position: relative;
 }
 
 @layer base {
     :root {
         --background: 0 0% 100%;
         --foreground: 240 10% 3.9%;
-
         --card: 0 0% 100%;
         --card-foreground: 240 10% 3.9%;
-
         --popover: 0 0% 100%;
         --popover-foreground: 240 10% 3.9%;
-
         --primary: 240 5.9% 10%;
         --primary-foreground: 0 0% 98%;
-
-        --secondary: 240 5.9% 10%;
-        --secondary-foreground: 180 34% 32%;
-
+        --secondary: 240 4.8% 95.9%;
+        --secondary-foreground: 240 5.9% 10%;
         --muted: 240 4.8% 95.9%;
-        --muted-foreground: 182 28% 21% / 0.6;
-
-        /*indigo*/
-        --accent: 230 75% 59%;
-        --accent-hover: 230 58% 51%;
-        --accent-foreground: 230 58% 51%;
-
+        --muted-foreground: 240 3.8% 46.1%;
+        --accent: 258 90% 66%; /* violet-500 */
+        --accent-hover: 262 83% 58%; /* violet-600 */
+        --accent-foreground: 258 90% 66%; /* violet-500 */
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
-
         --border: 240 5.9% 90%;
         --input: 240 5.9% 90%;
-        --ring: 240 10% 3.9%;
-
+        --ring: 240 5.9% 10%;
         --radius: 0.5rem;
     }
 
     .dark {
         --background: 240 10% 3.9%;
-        --foreground: 0 0% 98%;
-
+        --foreground: 240 5% 64.9%;
         --card: 240 10% 3.9%;
         --card-foreground: 0 0% 98%;
-
         --popover: 240 10% 3.9%;
         --popover-foreground: 0 0% 98%;
-
-        --primary: 177 32% 64%;
-        --primary-foreground: 180 26% 19%;
-
-        --secondary: 240 11% 9%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 5.9% 10%;
+        --secondary: 240 3.7% 15.9%;
         --secondary-foreground: 0 0% 98%;
-
         --muted: 240 3.7% 15.9%;
-        --muted-foreground: 54 24% 92% / 0.5;
-
-        /* indigo */
-        --accent: 230 94% 82%;
-        --accent-hover: 229 89% 74%;
-        --accent-foreground: 230 94% 82%;
-
+        --muted-foreground: 240 5% 64.9%/0.6;
+        --accent: 252 95% 85%; /* violet-300 */
+        --accent-hover: 255 92% 76%; /* violet-400 */
+        --accent-foreground: 252 95% 85%; /* violet-300 */
         --destructive: 0 62.8% 30.6%;
         --destructive-foreground: 0 0% 98%;
-
         --border: 240 3.7% 15.9%;
         --input: 240 3.7% 15.9%;
         --ring: 240 4.9% 83.9%;
@@ -82,6 +64,7 @@ body {
     * {
         @apply border-border;
     }
+
     body {
         @apply bg-background text-foreground;
     }
@@ -89,54 +72,5 @@ body {
 
 .container {
     height: 100%;
-}
-
-/* anchor(link) hover animation */
-.link {
-    cursor: pointer;
-    position: relative;
-    white-space: nowrap;
-}
-
-.link::before,
-.link::after {
-    position: absolute;
-    width: 100%;
-    height: 1px;
-    background: currentColor;
-    top: 100%;
-    left: 0;
-    pointer-events: none;
-}
-
-.link::before {
-    content: '';
-}
-
-.link::before {
-    transform-origin: 100% 50%;
-    transform: scale3d(0, 1, 1);
-    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
-}
-
-.link::after {
-    content: '';
-    top: calc(100% + 4px);
-    transform-origin: 0% 50%;
-    transform: scale3d(0, 1, 1);
-    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
-}
-
-.link:hover::before,
-.link--hover::before {
-    transform-origin: 0% 50%;
-    transform: scale3d(1, 1, 1);
-    transition-timing-function: cubic-bezier(0.4, 1, 0.8, 1);
-}
-
-.link:hover::after,
-.link--hover::after {
-    transform-origin: 100% 50%;
-    transform: scale3d(1, 1, 1);
-    transition-timing-function: cubic-bezier(0.4, 1, 0.8, 1);
+    max-width: 100%;
 }

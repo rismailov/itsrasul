@@ -1,46 +1,26 @@
-import me from '@/public/me.webp'
-import Image from 'next/image'
-import { AnimatedTextOnSroll } from '../../AnimatedTextOnSroll'
+import { MarqueeTextSection } from '@/components/MarqueeTextSection'
+import { Separator } from '@/components/ui/separator'
 import { InfoSubSection } from './InfoSubSection'
+import { Button } from '@/components/ui/button'
 
 export const AboutSection = () => {
     return (
-        <section
-            id="about"
-            className="h-screen py-20 bg-background dark:bg-secondary rounded-tl-3xl rounded-tr-3xl"
-        >
+        <section className="flex flex-col">
+            <MarqueeTextSection text="ABOUT ME •" />
+
             <div className="container">
-                {/* header */}
-                <div className="flex items-end justify-between">
-                    <div>
-                        <div className="w-28 h-28 overflow-hidden rounded-full">
-                            <Image
-                                src={me}
-                                alt="Me"
-                                className="w-full h-full object-center object-cover"
-                            />
+                <div className="flex flex-nowrap items-center justify-between space-x-8 px-8">
+                    {/* img */}
+                    <div className="py-8">
+                        <div className="w-[500px] h-[500px] bg-foreground/5 rounded-tl-full rounded-tr-full flex items-center justify-center">
+                            <span className="text-muted-foreground">
+                                todo: professional image
+                            </span>
                         </div>
                     </div>
 
-                    <div className="flex flex-col">
-                        {/* pre-title */}
-                        <p className="ml-auto text-muted-foreground text-lg leading-none text-right">
-                            a little more info
-                        </p>
-
-                        {/* title */}
-                        <AnimatedTextOnSroll
-                            text="About me"
-                            className="ml-auto font-heading text-[4vw] text-foreground text-right leading-tight"
-                        />
-                    </div>
-                </div>
-
-                {/* about */}
-                <div className="mt-7">
-                    {/* section 1 */}
-                    <InfoSubSection title="Professional">
-                        <p>
+                    <div className="max-w-lg flex flex-col py-16 px-8 space-y-8">
+                        <InfoSubSection title="Professional">
                             I'm a self-taught & self-motivated full-stack web
                             developer with over 5 years experience. Currently
                             I'm freelancing by helping small to medium scale
@@ -48,43 +28,51 @@ export const AboutSection = () => {
                             software solutions in line with the industry's best
                             practices. You can find me on popular freelance
                             platforms such as{' '}
-                            <a
-                                href="https://www.upwork.com/freelancers/~016e4171185bc6ec63"
-                                target="_blank"
-                                className="text-green-600 dark:text-foreground link"
+                            <Button
+                                variant="link"
+                                asChild
+                                className="text-base"
                             >
-                                Upwork
-                            </a>{' '}
+                                <a
+                                    href="https://www.upwork.com/freelancers/~016e4171185bc6ec63"
+                                    target="_blank"
+                                >
+                                    Upwork
+                                </a>
+                            </Button>{' '}
                             and{' '}
-                            <a
-                                href="https://www.fiverr.com/itsrasul"
-                                target="_blank"
-                                className="text-green-600 dark:text-foreground link"
+                            <Button
+                                variant="link"
+                                asChild
+                                className="text-base"
                             >
-                                Fiverr
-                            </a>
+                                <a
+                                    href="https://www.fiverr.com/itsrasul"
+                                    target="_blank"
+                                >
+                                    Fiverr
+                                </a>
+                            </Button>
                             .
-                        </p>
-                    </InfoSubSection>
+                        </InfoSubSection>
 
-                    {/* section 2 */}
-                    <InfoSubSection title="Personal">
-                        <p>
+                        <Separator />
+
+                        <InfoSubSection title="Personal">
                             In my free time you will probably find me working
                             out, hitting the drums, meditating or spending time
                             with my family.
-                        </p>
-                    </InfoSubSection>
+                        </InfoSubSection>
 
-                    {/* section 3 */}
-                    <InfoSubSection title="Services">
-                        <p>
+                        <Separator />
+
+                        <InfoSubSection title="Services">
                             I focus on building professional, responsive and
                             SEO-optimized websites. These include, but not
                             limited to landing pages, e-commerce shops,
                             portfolios or personal sites and CRM/CMS systems.
-                        </p>
-                    </InfoSubSection>
+                        </InfoSubSection>
+                    </div>
                 </div>
             </div>
         </section>

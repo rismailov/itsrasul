@@ -1,61 +1,48 @@
-'use client'
-
-import { IconMoon, IconSun } from '@tabler/icons-react'
-import { AnimatePresence, motion } from 'framer-motion'
 import { useTheme } from 'next-themes'
 import { OnlyClient } from '../OnlyClient'
-
-const iconVariants = {
-    initial: { opacity: 0, y: 15 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -5 },
-}
+import { Button } from '../ui/button'
 
 export const ThemeSwitcher = () => {
     const { theme, setTheme } = useTheme()
 
     return (
         <OnlyClient>
-            <button
-                className="relative w-[19px] h-[19px] mr-2"
+            <Button
+                size="icon"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
             >
-                <AnimatePresence initial={false} mode="popLayout">
-                    {theme === 'dark' && (
-                        <motion.div
-                            className="absolute inset-0"
-                            key={theme}
-                            variants={iconVariants}
-                            initial="initial"
-                            animate="animate"
-                            exit="exit"
-                            transition={{
-                                ease: 'backOut',
-                                duration: 0.5,
-                            }}
+                {theme === 'dark' ? (
+                    <svg
+                        className="w-4.5 h-4.5 stroke-foreground"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <g
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
                         >
-                            <IconSun className="w-full h-full" />
-                        </motion.div>
-                    )}
-
-                    {theme !== 'dark' && (
-                        <motion.div
-                            className="absolute inset-0"
-                            key={theme}
-                            variants={iconVariants}
-                            initial="initial"
-                            animate="animate"
-                            exit="exit"
-                            transition={{
-                                ease: 'backOut',
-                                duration: 0.5,
-                            }}
-                        >
-                            <IconMoon className="w-full h-full" />
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-            </button>
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                        </g>
+                    </svg>
+                ) : (
+                    <svg
+                        className="w-4.5 h-4.5 stroke-foreground"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M12 3a6 6 0 0 0 9 9a9 9 0 1 1-9-9Z"
+                        ></path>
+                    </svg>
+                )}
+            </Button>
         </OnlyClient>
     )
 }

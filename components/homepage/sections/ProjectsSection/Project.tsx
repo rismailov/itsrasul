@@ -1,19 +1,18 @@
 import { useGsapContext } from '@/context/gsap-provider'
 import { closestEdge } from '@/lib/utils'
 import clsx from 'clsx'
-import gsap from 'gsap'
-import { MouseEvent, useLayoutEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { useLayoutEffect, useRef } from 'react'
 import classes from './Project.module.css'
-import { STACKS, StackSprite } from './sprites/StackSprite'
 
 export const Project = ({
-    stacks,
+    category,
     title,
-    url,
+    number,
 }: {
-    stacks: (typeof STACKS)[keyof typeof STACKS][]
+    category: string
     title: string
-    url: string
+    number: number
 }) => {
     // elements
     const rootRef = useRef<HTMLAnchorElement | null>(null)
@@ -52,8 +51,8 @@ export const Project = ({
                     return gsap
                         .timeline({ paused: true })
                         .to(rootRef.current!, {
-                            paddingLeft: 30,
-                            paddingRight: 30,
+                            paddingLeft: 28,
+                            paddingRight: 28,
                         })
                         .set(
                             marquee,
@@ -114,60 +113,47 @@ export const Project = ({
 
     return (
         <a
-            href={url}
-            target="_blank"
             ref={rootRef}
-            className="relative overflow-hidden border-t group"
+            href="#"
+            target="_blank"
+            className="relative overflow-hidden py-4 border-t group"
+            // @ts-ignore
+            onMouseEnter={onMouseEnter}
+            // @ts-ignore
+            onMouseLeave={onMouseLeave}
         >
-            {/* CONTENT */}
-            <div
-                onMouseEnter={onMouseEnter}
-                onMouseLeave={onMouseLeave}
-                className="relative flex items-center z-10 h-full py-5"
-            >
-                {/* title */}
-                <div className="w-1/3">
-                    <h3 className="text-xl font-medium font-heading text-foreground group-hover:text-background transition-colors">
+            {/* content */}
+            <div className="relative z-10 flex flex-col space-y-8">
+                {/* header */}
+                <div className="flex justify-between text-sm text-muted-foreground group-hover:text-background/60 transition-colors duration-300 font-paragraph">
+                    <p>{category}</p>
+                    <p>00{number}</p>
+                </div>
+
+                {/* content */}
+                <div className="flex items-end justify-between">
+                    <h2 className="uppercase text-7xl font-light group-hover:text-background transition-colors duration-300">
                         {title}
-                    </h3>
-                </div>
+                    </h2>
 
-                {/* stack */}
-                <div className="h-full flex items-center space-x-5 [&>svg]:w-7 [&>svg]:h-7">
-                    {stacks.map((stack) => (
-                        <StackSprite key={stack} stack={stack} />
-                    ))}
-                </div>
-
-                {/* arrow */}
-                <div className="ml-auto">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        width="24"
-                        height="24"
+                        className="w-8 h-8 group-hover:text-background transition-colors duration-300"
                         viewBox="0 0 24 24"
-                        fill="none"
-                        className="stroke-foreground group-hover:stroke-background transition-colors"
                     >
                         <path
-                            d="M2 22L21 3"
-                            strokeWidth="2"
-                            strokeLinecap="square"
-                        />
-                        <path
-                            d="M12 2H22V12"
-                            strokeWidth="2"
-                            strokeLinecap="square"
+                            fill="currentColor"
+                            d="M5 17.59 15.59 7H9V5h10v10h-2V8.41L6.41 19 5 17.59Z"
                         />
                     </svg>
                 </div>
             </div>
 
-            {/* HOVER LAYER */}
+            {/* hover layer */}
             <div
                 ref={marqueeRef}
                 className={clsx(
-                    'absolute top-0 left-0 overflow-hidden w-full h-full pointer-events-none bg-white',
+                    'absolute top-0 left-0 overflow-hidden w-full h-full pointer-events-none bg-foreground dark:bg-accent',
                     classes.marquee,
                 )}
             >

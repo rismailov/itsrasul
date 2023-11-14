@@ -53,7 +53,7 @@ export const AnimatedTextOnSroll = ({
                             trigger: word,
                             start: 'center bottom+=20%',
                             end: 'bottom center-=30%',
-                            scrub: 0.9,
+                            // scrub: 0.9,
                         },
                     },
                 )

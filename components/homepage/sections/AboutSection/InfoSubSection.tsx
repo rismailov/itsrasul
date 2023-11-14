@@ -1,4 +1,3 @@
-import { Separator } from '@/components/ui/separator'
 import { PropsWithChildren } from 'react'
 
 export const InfoSubSection = ({
@@ -6,18 +5,13 @@ export const InfoSubSection = ({
     children,
 }: PropsWithChildren<{ title: string }>) => {
     return (
-        <div>
-            <Separator />
+        <div className="flex flex-col space-y-2">
+            {/* badge */}
+            <div className="uppercase text-xs font-medium rounded-full border-[1.5px] border-accent text-accent py-1 px-3 self-start -ml-1">
+                {title}
+            </div>
 
-            <section className="py-5 flex items-start justify-between text-lg">
-                <h3 className="font-medium font-heading text-muted-foreground">
-                    {title}
-                </h3>
-
-                <div className="w-full max-w-xl text-foreground/70 dark:text-muted-foreground">
-                    {children}
-                </div>
-            </section>
+            <p className="font-paragraph">{children}</p>
         </div>
     )
 }

@@ -12,14 +12,11 @@ module.exports = {
     theme: {
         fontFamily: {
             sans: ['var(--font-sans)', ...fontFamily.sans],
-            heading: ['var(--font-heading)', ...fontFamily.sans],
+            paragraph: ['var(--font-paragraph)', ...fontFamily.sans],
         },
         container: {
             center: true,
             padding: '2rem',
-            screens: {
-                '2xl': '1300px',
-            },
         },
         extend: {
             colors: {
@@ -76,6 +73,9 @@ module.exports = {
             animation: {
                 'accordion-down': 'accordion-down 0.2s ease-out',
                 'accordion-up': 'accordion-up 0.2s ease-out',
+            },
+            spacing: {
+                4.5: '1.1rem',
             },
         },
     },
