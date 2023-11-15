@@ -2,9 +2,9 @@ export const HeroSection = () => {
     return (
         <section>
             <div className="container border-b">
-                <div className="w-full flex">
-                    <div className="flex-1 flex flex-col items-start justify-between leading-none p-8 border-r">
-                        <h1 className="text-2xl uppercase">
+                <div className="w-full flex flex-col sm:flex-row">
+                    <div className="flex-1 flex flex-col items-start justify-between leading-none pt-8 sm:pb-8 sm:edge-padding-r sm:border-r">
+                        <h1 className="text-xl sm:text-2xl text-center sm:text-left uppercase">
                             <span className="text-foreground">
                                 Full-stack Web Developer{' '}
                             </span>
@@ -14,7 +14,7 @@ export const HeroSection = () => {
                         <svg
                             width="120"
                             height="120"
-                            className="fill-border"
+                            className="hidden sm:inline fill-border"
                             viewBox="0 0 200 200"
                             xmlns="http://www.w3.org/2000/svg"
                         >
@@ -28,11 +28,10 @@ export const HeroSection = () => {
                         </svg>
                     </div>
 
-                    <div className="w-[45%] p-8 flex flex-col justify-between space-y-12">
-                        {/* personal photo placeholder */}
-                        <div className="w-28 h-28 rounded-full border flex items-center justify-center"></div>
+                    <div className="sm:w-[45%] py-8 sm:edge-padding-l flex flex-col justify-between">
+                        <div className="hidden sm:flex mb-12 w-28 h-28 rounded-full border items-center justify-center"></div>
 
-                        <p className="w-full font-paragraph">
+                        <p className="w-full font-paragraph text-muted-foreground sm:text-foreground text-center sm:text-left">
                             Hi, I'm Rasul. A self-taught full-stack web
                             developer from Baku, passionate about crafting
                             beautiful web, mobile expo and mobile experiences.

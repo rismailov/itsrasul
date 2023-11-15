@@ -15,11 +15,8 @@ export default function Home() {
             className="flex flex-col min-h-screen relative z-10"
         >
             <HeroSection />
-
             <ProjectsSection />
-
             <AboutSection />
-
             <ContactSection />
         </main>
     )

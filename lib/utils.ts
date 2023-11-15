@@ -5,6 +5,10 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs))
 }
 
+export function sleep(ms = 500): Promise<void> {
+    return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
 // cool side-aware hover effect
 export function distMetric(x: number, y: number, x2: number, y2: number) {
     const xDiff = x - x2
@@ -108,3 +112,6 @@ export class MarqueeItem {
         window.requestAnimationFrame(() => this.render())
     }
 }
+
+// easings
+export const easeOutQuart = [0.25, 1, 0.5, 1]

@@ -16,6 +16,7 @@
         "@studio-freight/react-lenis": "^0.0.36",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.0.0",
+        "framer-motion": "^10.16.5",
         "gsap": "^3.12.2",
         "next": "13.5.6",
         "next-themes": "^0.2.1",

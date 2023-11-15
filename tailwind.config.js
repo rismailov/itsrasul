@@ -16,7 +16,18 @@ module.exports = {
         },
         container: {
             center: true,
-            padding: '2rem',
+            padding: {
+                DEFAULT: '1rem',
+                md: '2rem',
+                lg: '4rem',
+            },
+            // screens: {
+            //     sm: '600px',
+            //     md: '728px',
+            //     lg: '984px',
+            //     xl: '1536px',
+            //     '2xl': '1496px',
+            // },
         },
         extend: {
             colors: {

@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    font-size: 20px;
-}
-
-body {
-    overflow-x: hidden;
-    position: relative;
-}
-
 @layer base {
     :root {
         --background: 0 0% 100%;
@@ -65,12 +56,26 @@ body {
         @apply border-border;
     }
 
+    html {
+        @apply overflow-hidden text-[20px];
+    }
+
     body {
-        @apply bg-background text-foreground;
+        @apply bg-background text-foreground overflow-x-hidden relative;
     }
 }
 
-.container {
-    height: 100%;
-    max-width: 100%;
+@layer components {
+    .container {
+        @apply h-full max-w-6xl;
+    }
+
+    /* grid cell edge padding (applied to very first or very last cell to have consistent padding) */
+    .edge-padding-l {
+        @apply pl-4 md:pl-6 lg:pl-8;
+    }
+
+    .edge-padding-r {
+        @apply pr-4 md:pr-6 lg:pr-8;
+    }
 }

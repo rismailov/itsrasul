@@ -123,7 +123,7 @@ export const Project = ({
             onMouseLeave={onMouseLeave}
         >
             {/* content */}
-            <div className="relative z-10 flex flex-col space-y-8">
+            <div className="relative z-10 flex flex-col space-y-4 md:space-y-8">
                 {/* header */}
                 <div className="flex justify-between text-sm text-muted-foreground group-hover:text-background/60 transition-colors duration-300 font-paragraph">
                     <p>{category}</p>
@@ -132,7 +132,7 @@ export const Project = ({
 
                 {/* content */}
                 <div className="flex items-end justify-between">
-                    <h2 className="uppercase text-7xl font-light group-hover:text-background transition-colors duration-300">
+                    <h2 className="uppercase text-[6vw] lg:text-6xl font-medium sm:font-light group-hover:text-background transition-colors duration-300">
                         {title}
                     </h2>
 

@@ -76,26 +76,27 @@ export const ProjectsSection = () => {
 
     return (
         <section
+            id="work"
             ref={sectionRef}
-            className="relative flex flex-col pb-16 border-b"
+            className="relative flex flex-col pb-8 md:pb-16 border-b"
         >
             {/* title */}
             <MarqueeTextSection text="RECENT WORK •" />
 
             {/* subheader */}
             <div className="container mt-4">
-                <div className="px-8 flex justify-between text-muted-foreground">
-                    <h3 className="w-[13rem] text-sm uppercase">
+                <div className="flex justify-between text-muted-foreground">
+                    <h3 className="w-full text-center md:text-left md:w-[13rem] text-sm uppercase">
                         Some of the projects I had the pleasure to work on
                     </h3>
 
-                    <h3 className="w-[13rem] pl-4 flex justify-center text-sm uppercase">
+                    <h3 className="hidden w-[13rem] pl-4 md:flex justify-center text-sm uppercase">
                         e-commerce /
                         <br />
                         business
                     </h3>
 
-                    <h3 className="w-[13rem] flex justify-end text-sm uppercase">
+                    <h3 className="hidden w-[13rem] md:flex justify-end text-sm uppercase">
                         5/9
                         <br />
                         41
@@ -104,16 +105,17 @@ export const ProjectsSection = () => {
             </div>
 
             {/* content */}
-            <div className="container mt-24">
-                <div id="contentWrapper" className="flex justify-between px-8">
+            <div className="container mt-4 md:mt-24">
+                <div
+                    id="contentWrapper"
+                    className="flex flex-col sm:flex-row justify-between"
+                >
                     {/* left side: animated svg that will convert the background colour */}
-                    <div className="mr-16">
+                    <div className="hidden md:block mr-8 lg:mr-16">
                         <svg
                             ref={svgRef}
-                            width="200"
-                            height="200"
                             xmlns="http://www.w3.org/2000/svg"
-                            className="fill-foreground"
+                            className="w-24 h-24 md:w-48 md:h-48 fill-foreground"
                         >
                             <g
                                 fillRule="evenodd"

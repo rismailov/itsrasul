@@ -6,23 +6,23 @@ import { STACKS, StackSprite } from './StackSprite'
 
 export const AboutSection = () => {
     return (
-        <section className="flex flex-col">
+        <section id="about" className="flex flex-col">
             <MarqueeTextSection text="ABOUT ME •" />
 
             <div className="container">
-                <div className="flex flex-nowrap justify-between space-x-8 px-8 py-16">
+                <div className="flex flex-col lg:flex-row lg:flex-nowrap justify-between space-y-16 lg:space-x-24 lg:space-y-0 py-12 md:py-16">
                     {/* img */}
-                    <div>
-                        <div className="w-[500px] h-[500px] bg-foreground/5 rounded-tl-full rounded-tr-full flex items-center justify-center">
+                    <div className="flex items-center justify-center lg:block">
+                        <div className="w-[300px] h-[300px] xl:w-[500px] xl:h-[500px] bg-foreground/5 rounded-tl-full rounded-tr-full flex items-center justify-center">
                             <span className="text-muted-foreground">
                                 todo: professional image
                             </span>
                         </div>
                     </div>
 
-                    <div className="max-w-lg flex flex-col px-8 space-y-8">
+                    <div className="max-w-md mx-auto lg:mx-0 lg:max-w-lg flex flex-col space-y-8">
                         <InfoSubSection title="Professional">
-                            <p>
+                            <p className="text-center lg:text-start">
                                 I'm a self-taught & self-motivated full-stack
                                 web developer with over 5 years experience.
                                 Currently I'm freelancing by helping small to
@@ -63,7 +63,7 @@ export const AboutSection = () => {
 
                         <InfoSubSection title="Stack">
                             <div className="flex flex-col space-y-5">
-                                <p>
+                                <p className="text-center lg:text-start">
                                     In my free time I like to tinker with
                                     various programming languages including
                                     Python, Golang, and Rust, just to name a
@@ -75,7 +75,7 @@ export const AboutSection = () => {
 
                                 <div className="space-y-2">
                                     <div
-                                        className="grid gap-5 [&>svg]:w-6 [&>svg]:h-6"
+                                        className="flex flex-wrap justify-center items-center md:grid md:gap-5 [&>svg]:w-6 [&>svg]:h-6 [&>svg]:m-2 md:[&>svg]:m-0"
                                         style={{
                                             gridTemplateColumns:
                                                 'repeat(auto-fill, minmax(30px, 1fr))',
@@ -101,7 +101,7 @@ export const AboutSection = () => {
                         <Separator />
 
                         <InfoSubSection title="Services">
-                            <p>
+                            <p className="text-center lg:text-start">
                                 I focus on building professional, responsive and
                                 SEO-optimized websites. These include, but not
                                 limited to landing pages, e-commerce shops,
@@ -113,7 +113,7 @@ export const AboutSection = () => {
                         <Separator />
 
                         <InfoSubSection title="Personal">
-                            <p>
+                            <p className="text-center lg:text-start">
                                 In my free time you will probably find me
                                 working out, hitting the drums, meditating or
                                 spending time with my family.
