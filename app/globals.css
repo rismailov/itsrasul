@@ -43,8 +43,8 @@
         --accent: 252 95% 85%; /* violet-300 */
         --accent-hover: 255 92% 76%; /* violet-400 */
         --accent-foreground: 252 95% 85%; /* violet-300 */
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
+        --destructive: 0 94% 82%; /* red-300 */
+        --destructive-foreground: 0 94% 82%; /* red-300 */
         --border: 240 3.7% 15.9%;
         --input: 240 3.7% 15.9%;
         --ring: 240 4.9% 83.9%;
@@ -77,5 +77,10 @@
 
     .edge-padding-r {
         @apply pr-4 md:pr-6 lg:pr-8;
+    }
+
+    /* input error messages */
+    .error {
+        @apply text-sm text-destructive font-paragraph;
     }
 }

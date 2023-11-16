@@ -7,6 +7,7 @@ import type { Metadata } from 'next'
 import { Space_Grotesk } from 'next/font/google'
 import localFont from 'next/font/local'
 import './globals.css'
+import { Toaster } from '@/components/ui/toaster'
 
 // fonts
 const fontSans = Space_Grotesk({
@@ -45,6 +46,8 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     <LenisProvider>
+                        <Toaster />
+
                         <Header />
 
                         {children}
