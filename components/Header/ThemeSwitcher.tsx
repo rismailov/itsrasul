@@ -10,6 +10,9 @@ export const ThemeSwitcher = () => {
             <Button
                 size="icon"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                aria-label={`Switch to ${
+                    theme === 'dark' ? 'light' : 'dark'
+                } mode`}
             >
                 {theme === 'dark' ? (
                     <svg

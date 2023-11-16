@@ -18,7 +18,7 @@ export const Header = () => {
 
         await sleep(300)
 
-        lenis.scrollTo(`#${sectionID}`)
+        lenis.scrollTo(`#${sectionID}`, { duration: 1.5 })
     }
 
     return (
@@ -63,7 +63,12 @@ export const Header = () => {
 
                     {/* cta button section */}
                     <div className="edge-padding-l flex items-center justify-center">
-                        <Button className="hidden md:block uppercase rounded-full dark:bg-accent dark:hover:bg-accent-hover text-xs font-semibold h-8 px-5">
+                        <Button
+                            onClick={() =>
+                                lenis.scrollTo('#contact', { duration: 1.5 })
+                            }
+                            className="hidden md:block uppercase rounded-full dark:bg-accent dark:hover:bg-accent-hover text-xs font-semibold h-8 px-5"
+                        >
                             Let's Talk
                         </Button>
 
@@ -71,6 +76,11 @@ export const Header = () => {
                             size="icon"
                             onClick={() => setShowMobileNav((prev) => !prev)}
                             className="md:hidden [&>svg]:w-4.5 [&>svg]:h-4.5 [&>svg]:fill-foreground"
+                            aria-label={
+                                showMobileNav
+                                    ? 'Close mobile menu'
+                                    : 'Open mobile menu'
+                            }
                         >
                             {showMobileNav ? (
                                 // close icon

@@ -47,9 +47,9 @@ export const ContactSection = () => {
                                     </div>
 
                                     <div>
-                                        <h3 className="md:text-lg text-center md:text-left leading-normal font-heading text-foreground uppercase font-medium">
+                                        <h1 className="md:text-lg text-center md:text-left leading-normal font-heading text-foreground uppercase font-medium">
                                             Have a project in mind?
-                                        </h3>
+                                        </h1>
 
                                         <p className="text-sm lg:text-base text-center md:text-left max-w-xs text-muted-foreground font-paragraph">
                                             Fill out the form and I will reach

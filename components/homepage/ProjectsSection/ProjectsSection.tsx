@@ -63,7 +63,7 @@ export const ProjectsSection = () => {
                 ScrollTrigger.create({
                     trigger: svgRef.current,
                     start: `-=${offset}`,
-                    end: `+=${contentWrapperHeight - svgHeight - offset * 1.5}`,
+                    end: `+=${contentWrapperHeight - svgHeight / 1.7 - offset}`,
                     pin: true,
                     scrub: true,
                 })
@@ -86,36 +86,38 @@ export const ProjectsSection = () => {
             {/* subheader */}
             <div className="container mt-4">
                 <div className="flex justify-between text-muted-foreground">
-                    <h3 className="w-full text-center md:text-left md:w-[13rem] text-sm uppercase">
+                    <p className="w-full text-center md:text-left md:w-[13rem] text-sm uppercase">
                         Some of the projects I had the pleasure to work on
-                    </h3>
+                    </p>
 
-                    <h3 className="hidden w-[13rem] pl-4 md:flex justify-center text-sm uppercase">
+                    <p className="hidden w-[13rem] pl-4 md:flex justify-center text-sm uppercase">
                         e-commerce /
                         <br />
                         business
-                    </h3>
+                    </p>
 
-                    <h3 className="hidden w-[13rem] md:flex justify-end text-sm uppercase">
+                    <p className="hidden w-[13rem] md:flex justify-end text-sm uppercase">
                         5/9
                         <br />
                         41
-                    </h3>
+                    </p>
                 </div>
             </div>
 
             {/* content */}
-            <div className="container mt-4 md:mt-24">
+            <div className="container mt-4 md:mt-20">
                 <div
                     id="contentWrapper"
                     className="flex flex-col sm:flex-row justify-between"
                 >
                     {/* left side: animated svg that will convert the background colour */}
-                    <div className="hidden md:block mr-8 lg:mr-16">
+                    <div className="hidden md:block mr-12 lg:mr-16">
                         <svg
                             ref={svgRef}
+                            width="200"
+                            height="200"
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-24 h-24 md:w-48 md:h-48 fill-foreground"
+                            className="fill-foreground"
                         >
                             <g
                                 fillRule="evenodd"
@@ -132,24 +134,28 @@ export const ProjectsSection = () => {
                         <Project
                             category="E-commerce Shop"
                             title="Nike Shoes"
+                            url="https://shoescommerce.itsrasul.dev/"
                             number={1}
                         />
 
                         <Project
                             category="Business Landing"
                             title="Digit UX"
+                            url="https://digit-ux.vercel.app/"
                             number={2}
                         />
 
                         <Project
                             category="Portfolio"
                             title="ITS RASUL"
+                            url="https://itsrasul.dev"
                             number={3}
                         />
 
                         <Project
                             category="Admin Dashboard"
                             title="CRM - CMS"
+                            url="#"
                             number={4}
                         />
                     </div>

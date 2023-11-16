@@ -14,8 +14,10 @@ export const AboutSection = () => {
                     {/* img */}
                     <div className="flex items-center justify-center lg:block">
                         <div className="w-[300px] h-[300px] xl:w-[500px] xl:h-[500px] bg-foreground/5 rounded-tl-full rounded-tr-full flex items-center justify-center">
-                            <span className="text-muted-foreground">
-                                todo: professional image
+                            <span className="text-foreground text-center">
+                                todo:
+                                <br />
+                                professional image
                             </span>
                         </div>
                     </div>

@@ -9,10 +9,12 @@ export const Project = ({
     category,
     title,
     number,
+    url,
 }: {
     category: string
     title: string
     number: number
+    url: string
 }) => {
     // elements
     const rootRef = useRef<HTMLAnchorElement | null>(null)
@@ -114,7 +116,7 @@ export const Project = ({
     return (
         <a
             ref={rootRef}
-            href="#"
+            href={url}
             target="_blank"
             className="relative overflow-hidden py-4 border-t group"
             // @ts-ignore
