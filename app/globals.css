@@ -57,7 +57,7 @@
     }
 
     html {
-        @apply overflow-hidden text-[20px];
+        @apply text-[20px];
     }
 
     body {
