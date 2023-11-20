@@ -6,8 +6,8 @@ module.exports = {
     content: [
         './pages/**/*.{ts,tsx}',
         './components/**/*.{ts,tsx}',
+        './context/**/*.{ts,tsx}',
         './app/**/*.{ts,tsx}',
-        './src/**/*.{ts,tsx}',
     ],
     theme: {
         fontFamily: {
@@ -87,6 +87,9 @@ module.exports = {
             },
             spacing: {
                 4.5: '1.1rem',
+            },
+            transitionTimingFunction: {
+                'out-quart': 'cubic-bezier(0.25, 1, 0.5, 1)',
             },
         },
     },

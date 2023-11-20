@@ -154,7 +154,7 @@ export const ProjectsSection = () => {
 
                         <Project
                             category="Admin Dashboard"
-                            title="CRM - CMS"
+                            title="Crypto CRM"
                             url="#"
                             number={4}
                         />

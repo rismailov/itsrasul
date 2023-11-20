@@ -10,10 +10,7 @@ export default function Home() {
     const mainRef = useRef<HTMLDivElement>(null)
 
     return (
-        <main
-            ref={mainRef}
-            className="flex flex-col min-h-screen relative z-10"
-        >
+        <main ref={mainRef} className="flex flex-col min-h-screen">
             <HeroSection />
             <ProjectsSection />
             <AboutSection />

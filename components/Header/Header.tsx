@@ -1,28 +1,33 @@
 'use client'
 
-import { easeOutQuart, sleep } from '@/lib/utils'
 import { useLenis } from '@studio-freight/react-lenis'
-import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import clsx from 'clsx'
+import React, { SetStateAction } from 'react'
 import { Button } from '../ui/button'
+import { MobileMenu } from './MobileMenu'
 import { SocialLinks } from './SocialLinks'
 import { ThemeSwitcher } from './ThemeSwitcher'
 
-export const Header = () => {
-    const [showMobileNav, setShowMobileNav] = useState(false)
-
+export const Header = ({
+    isMobileMenuOpen,
+    setMobileMenuOpen,
+}: {
+    isMobileMenuOpen: boolean
+    setMobileMenuOpen: React.Dispatch<SetStateAction<boolean>>
+}) => {
     const lenis = useLenis()
 
-    const onMobileNavLinkClick = async (sectionID: string) => {
-        setShowMobileNav(false)
-
-        await sleep(300)
-
-        lenis.scrollTo(`#${sectionID}`, { duration: 1.5 })
-    }
-
     return (
-        <header className="relative border-b h-14 md:h-16">
+        <header className="relative z-30 h-14 md:h-16">
+            {/* absolute positioned border that wont get hidden when mobile nav is toggled (unline default css border) */}
+            <div className="absolute top-full left-0 right-0 h-px bg-border z-40"></div>
+
+            {/* mobile nav */}
+            <MobileMenu
+                isMobileMenuOpen={isMobileMenuOpen}
+                closeMobileMenu={() => setMobileMenuOpen(false)}
+            />
+
             {/* header content */}
             <div className="container relative z-30 bg-background">
                 <div className="flex w-full h-full">
@@ -30,7 +35,7 @@ export const Header = () => {
                     <div className="edge-padding-r border-r flex items-center justify-center">
                         <a href="https://itsrasul.dev">
                             <span className="hidden md:inline font-paragraph">
-                                Rasul Mamedov
+                                Rasul Ismayil
                             </span>
 
                             <svg
@@ -72,82 +77,48 @@ export const Header = () => {
                             Let's Talk
                         </Button>
 
+                        {/* mobile menu trigger */}
                         <Button
                             size="icon"
-                            onClick={() => setShowMobileNav((prev) => !prev)}
-                            className="md:hidden [&>svg]:w-4.5 [&>svg]:h-4.5 [&>svg]:fill-foreground"
+                            className="md:hidden relative flex items-center justify-center"
+                            onClick={() => setMobileMenuOpen((prev) => !prev)}
                             aria-label={
-                                showMobileNav
+                                isMobileMenuOpen
                                     ? 'Close mobile menu'
                                     : 'Open mobile menu'
                             }
                         >
-                            {showMobileNav ? (
-                                // close icon
-                                <svg
-                                    viewBox="0 0 1024 1024"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M799.855 166.312c.023.007.043.018.084.059l57.69 57.69c.041.041.052.06.059.084a.118.118 0 0 1 0 .069c-.007.023-.018.042-.059.083L569.926 512l287.703 287.703c.041.04.052.06.059.083a.118.118 0 0 1 0 .07c-.007.022-.018.042-.059.083l-57.69 57.69c-.041.041-.06.052-.084.059a.118.118 0 0 1-.069 0c-.023-.007-.042-.018-.083-.059L512 569.926L224.297 857.629c-.04.041-.06.052-.083.059a.118.118 0 0 1-.07 0c-.022-.007-.042-.018-.083-.059l-57.69-57.69c-.041-.041-.052-.06-.059-.084a.118.118 0 0 1 0-.069c.007-.023.018-.042.059-.083L454.073 512L166.371 224.297c-.041-.04-.052-.06-.059-.083a.118.118 0 0 1 0-.07c.007-.022.018-.042.059-.083l57.69-57.69c.041-.041.06-.052.084-.059a.118.118 0 0 1 .069 0c.023.007.042.018.083.059L512 454.073l287.703-287.702c.04-.041.06-.052.083-.059a.118.118 0 0 1 .07 0Z"
-                                    ></path>
-                                </svg>
-                            ) : (
-                                // burger icon
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path d="M3 4h18v2H3V4Zm0 7h12v2H3v-2Zm0 7h18v2H3v-2Z"></path>
-                                </svg>
-                            )}
+                            <div className="w-4 relative">
+                                <span
+                                    className={clsx(
+                                        'inline-block absolute left-0 h-[1.75px] w-full bg-foreground transform transition duration-400 ease-out-quart rounded',
+                                        isMobileMenuOpen
+                                            ? 'rotate-45'
+                                            : '-translate-y-1.5',
+                                    )}
+                                ></span>
+
+                                <span
+                                    className={clsx(
+                                        'inline-block absolute left-0 h-[1.75px] w-2/3 bg-foreground transform transition duration-400 ease-out-quart rounded',
+                                        isMobileMenuOpen &&
+                                            'opacity-0 translate-x-0.5',
+                                    )}
+                                ></span>
+
+                                <span
+                                    className={clsx(
+                                        'inline-block absolute left-0 h-[1.75px] w-full bg-foreground transform transition duration-400 ease-out-quart rounded',
+                                        isMobileMenuOpen
+                                            ? '-rotate-45'
+                                            : 'translate-y-1.5',
+                                    )}
+                                ></span>
+                            </div>
                         </Button>
                     </div>
                 </div>
             </div>
-
-            {/* mobile nav */}
-            <AnimatePresence>
-                {showMobileNav && (
-                    <motion.div
-                        initial={{ opacity: 0, y: -30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -30 }}
-                        transition={{ duration: 0.4, ease: easeOutQuart }}
-                        className="md:hidden absolute z-20 top-14 left-0 right-0 flex flex-col justify-between p-8 bg-background h-[calc(100vh-56px)] border-b"
-                    >
-                        <div className="flex flex-col items-start space-y-4">
-                            <button
-                                onClick={() => onMobileNavLinkClick('work')}
-                            >
-                                WORK
-                            </button>
-                            <button
-                                onClick={() => onMobileNavLinkClick('about')}
-                            >
-                                ABOUT
-                            </button>
-                            <button
-                                onClick={() => onMobileNavLinkClick('contact')}
-                            >
-                                CONTACT
-                            </button>
-                        </div>
-
-                        <div className="flex items-center justify-between">
-                            <SocialLinks />
-
-                            <Button
-                                onClick={() => onMobileNavLinkClick('contact')}
-                                className="self-start uppercase rounded-full dark:bg-accent dark:hover:bg-accent-hover text-xs font-semibold h-8 px-5"
-                            >
-                                Let's Talk
-                            </Button>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
         </header>
     )
 }

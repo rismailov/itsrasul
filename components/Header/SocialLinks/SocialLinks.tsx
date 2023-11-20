@@ -3,7 +3,7 @@ import { SpriteGithub, SpriteTelegram, SpriteWhatsapp } from './sprites'
 
 export const SocialLinks = () => {
     return (
-        <ul className="h-full grid grid-cols-3 gap-2 place-content-center [&>li]:h-full">
+        <ul className="h-full grid grid-cols-3 gap-0 md:gap-2 place-content-center [&>li]:h-full">
             <li>
                 <Button size="icon" asChild>
                     <a
