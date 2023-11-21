@@ -79,7 +79,7 @@ export const HeroSection = () => {
                 <div className="w-full flex flex-col sm:flex-row">
                     <div className="flex-1 flex flex-col items-center sm:items-start justify-between leading-none pt-8 sm:pb-8 sm:edge-padding-r sm:border-r">
                         <h1 className="text-xl sm:text-2xl text-center sm:text-left uppercase">
-                            Full-stack Web Developer with an excellent eye for
+                            Full-stack Web Developer with a meticulous eye for
                             detail
                         </h1>
 
@@ -126,10 +126,9 @@ export const HeroSection = () => {
                         <div className="hidden sm:flex mb-12 w-28 h-28 rounded-full border items-center justify-center"></div>
 
                         <p className="w-full font-paragraph text-muted-foreground sm:text-foreground text-center sm:text-left">
-                            Hi, I'm Rasul. A self-taught full-stack web
-                            developer with over 5 years of experience. I'm
-                            passionate about crafting beautiful web experiences
-                            and performant web apps.
+                            Hi, I'm Rasul. A seasoned web artisan with 5+ years
+                            of experience crafting stunning websites that
+                            deliver exceptional user experiences.
                         </p>
                     </div>
                 </div>

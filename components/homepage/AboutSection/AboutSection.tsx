@@ -25,8 +25,6 @@ export const AboutSection = () => {
                     <div className="max-w-md mx-auto lg:mx-0 lg:max-w-lg flex flex-col space-y-8">
                         <InfoSubSection title="Professional">
                             <p className="text-center lg:text-start">
-                                I'm a self-taught & self-motivated full-stack
-                                web developer with over 5 years of experience.
                                 Currently I'm freelancing by helping small to
                                 medium scale enterprises and individual
                                 entrepreneurs develop software solutions in line
