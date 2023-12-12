@@ -3,6 +3,8 @@ import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { InfoSubSection } from './InfoSubSection'
 import { STACKS, StackSprite } from './StackSprite'
+import Image from 'next/image'
+import me from '@/public/me.webp'
 
 export const AboutSection = () => {
     return (
@@ -13,12 +15,12 @@ export const AboutSection = () => {
                 <div className="flex flex-col lg:flex-row lg:flex-nowrap justify-between space-y-16 lg:space-x-24 lg:space-y-0 py-12 md:py-16">
                     {/* img */}
                     <div className="flex items-center justify-center lg:block">
-                        <div className="w-[300px] h-[300px] xl:w-[500px] xl:h-[500px] bg-foreground/5 rounded-tl-full rounded-tr-full flex items-center justify-center">
-                            <span className="text-foreground text-center">
-                                todo:
-                                <br />
-                                professional image
-                            </span>
+                        <div className="w-[300px] h-[300px] xl:w-[500px] xl:h-[500px] rounded-tl-full rounded-tr-full overflow-hidden">
+                            <Image
+                                className="w-full h-full object-cover object-center scale-110"
+                                src={me}
+                                alt="me"
+                            />
                         </div>
                     </div>
 
